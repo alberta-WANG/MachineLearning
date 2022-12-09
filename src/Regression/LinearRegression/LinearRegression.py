@@ -45,7 +45,6 @@ class linearRegression():
         plt.xlabel(xLabel)
         plt.ylabel(yLabel)
 
-        plt.show()
-
         if len(fName):
             plt.savefig(fName)
+        plt.show()

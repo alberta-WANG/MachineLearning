@@ -1,5 +1,8 @@
 import os
+import sys
+sys.dont_write_bytecode = True
 from Regression.LinearRegression import LinearRegression as lr
+
 import data
 
 
