@@ -102,8 +102,8 @@ class classification:
             self.Y = data[(data['MSSubClass']==30) |(data['MSSubClass']==60)][['MSSubClass']].values
             self.Y[self.Y==30] = self.negLabel
             self.Y[self.Y==60] = self.posLabel
-            self.xLabel = "area x[m^2]"
-            self.yLabel = "level y"
+            self.xLabel = "area[m^2]"
+            self.yLabel = "level"
 
         # 建物等級）説明変数:GrLivArea,GarageArea
         elif dataType == 2:
@@ -113,7 +113,7 @@ class classification:
             self.Y[self.Y==30] = self.negLabel
             self.Y[self.Y==60] = self.posLabel
             self.xLabel = "area x[m^2]"
-            self.yLabel = "garage area x[m^2]"
+            self.yLabel = "garage area[m^2]"
 
         # トイデータ） 線形分離可能な2つのガウス分布に従場合
         elif dataType == 3:

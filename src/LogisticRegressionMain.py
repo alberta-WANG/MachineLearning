@@ -6,7 +6,7 @@ import data
 
 # 1. preparing data
 myData = data.classification(negLabel=0,posLabel=1)
-myData.makeData(dataType=2)
+myData.makeData(dataType=1)
 
 # 2. preparing training data and test data
 dtrNum = int(len(myData.X)*0.9) # number of training data
@@ -41,7 +41,7 @@ for ite in range(1001):
     myModel.update(alpha=1)
 
 #-------------------
-# 5. 真値と予測値のプロット
+# 5. ploting real value and predict
 if Xtr.shape[1] == 1:
     myModel.plotModel1D(X=Xtr,Y=Ytr,xLabel=myData.xLabel,yLabel=myData.yLabel,fName=f"../results/logistic_result_train_{myData.dataType}.pdf")
 elif Xtr.shape[1] == 2:
@@ -49,7 +49,6 @@ elif Xtr.shape[1] == 2:
 #-------------------
 
 #-------------------
-# 6. 学習と評価損失のプロット
+# 6. ploting train loss and estimate loss
 myModel.plotEval(trLoss,teLoss,fName=f"../results/logistic_CE_{myData.dataType}.pdf")
-#myModel.plotLoss(trLoss,teLoss)
 #-------------------
