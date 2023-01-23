@@ -127,8 +127,8 @@ class classification:
             randInds = np.random.permutation(dNum)
             self.X = X[randInds]
             self.Y = Y[randInds]
-            self.xLabel = "$x_1$"
-            self.yLabel = "$x_2$"
+            self.xLabel = "x1"
+            self.yLabel = "x2"
 
         # トイデータ）分類境界がアルファベッドのCの形をしている場合
         elif dataType == 4:
