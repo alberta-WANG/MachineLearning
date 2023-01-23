@@ -5,7 +5,7 @@ import data
 import numpy as np
 
 myData = data.classification(negLabel=-1,posLabel=1)
-myData.makeData(dataType=3)
+myData.makeData(dataType=2)
 
 dNum = int(len(myData.X)*0.9)
 Xtr = myData.X[:dNum]
@@ -19,7 +19,7 @@ Xtr = (Xtr-xMean)/xStd
 Xte = (Xte-xMean)/xStd
 
 myModel = svm.SVM(Xtr,Ytr)
-myModel.train()
+myModel.trainSoft(0.5)
 
 print(f"parameter:\nw = {myModel.w}\nb = {myModel.b}")
 print(f"accuracy={myModel.accuracy(Xte,Yte):.2f}")
